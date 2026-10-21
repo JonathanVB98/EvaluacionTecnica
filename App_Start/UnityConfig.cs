@@ -1,5 +1,9 @@
 ﻿using AutoMapper;
+using EvaluacionTecnica.Manager;
+using EvaluacionTecnica.Manager.IManager;
 using EvaluacionTecnica.Models;
+using EvaluacionTecnica.Repository;
+using EvaluacionTecnica.Repository.IRepository;
 using System.Web.Http;
 using Unity;
 using Unity.WebApi;
@@ -17,11 +21,14 @@ namespace EvaluacionTecnica.App_Start
             container.RegisterFactory<IMapper>(c => mapperConfig.CreateMapper());
 
             #region Repository
+            container.RegisterType<IRolRepository, RolRepository>();
+
             #endregion
 
             #region Manager
+            container.RegisterType<IRolManager, RolManager>();
             #endregion
-            
+
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }

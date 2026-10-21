@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using EvaluacionTecnica.Models.Tables;
+using System.Data.Entity;
 
 namespace EvaluacionTecnica.Models
 {
@@ -8,5 +9,6 @@ namespace EvaluacionTecnica.Models
         {
             Configuration.LazyLoadingEnabled = false;
         }
+        public virtual DbSet<Rol> Rol { get; set; }
     }
 }
