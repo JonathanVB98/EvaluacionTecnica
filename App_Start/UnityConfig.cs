@@ -22,11 +22,13 @@ namespace EvaluacionTecnica.App_Start
 
             #region Repository
             container.RegisterType<IRolRepository, RolRepository>();
+            container.RegisterType<IEmpleadoRepository, EmpleadoRepository>();
 
             #endregion
 
             #region Manager
             container.RegisterType<IRolManager, RolManager>();
+            container.RegisterType<IEmpleadoManager, EmpleadoManager>();
             #endregion
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
