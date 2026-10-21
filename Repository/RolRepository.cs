@@ -1,4 +1,5 @@
 ﻿using EvaluacionTecnica.Models;
+using EvaluacionTecnica.Models.Dto;
 using EvaluacionTecnica.Models.Tables;
 using EvaluacionTecnica.Repository.IRepository;
 using System;
@@ -20,6 +21,11 @@ namespace EvaluacionTecnica.Repository
         public override Rol GetById(int id)
         {
             return _context.Set<Rol>().Where(u => u.RolId == id).FirstOrDefault();
+        }
+
+        public List<Rol> GetRol()
+        {
+           return _context.Set<Rol>().ToList();
         }
     }
 }

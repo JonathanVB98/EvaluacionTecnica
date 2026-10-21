@@ -1,7 +1,10 @@
 ﻿using EvaluacionTecnica.Filters;
 using EvaluacionTecnica.Manager.IManager;
+using EvaluacionTecnica.Models;
 using EvaluacionTecnica.Models.Dto;
 using EvaluacionTecnica.Models.Tables;
+using System;
+using System.Collections.Generic;
 using System.Web.Http;
 using HttpDeleteAttribute = System.Web.Http.HttpDeleteAttribute;
 using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
@@ -42,5 +45,24 @@ namespace EvaluacionTecnica.Controllers
         [HttpPatch]
         [Route("update")]
         public override IHttpActionResult Update(int id, [FromBody] RolDto state) => base.Update(id, state);
+
+        [HttpGet]
+        [Route("prueba")]
+        public IHttpActionResult GetRol()
+        {
+            try
+            {
+                List<RolDto> lstRol = _manager.GetRol();
+
+                return Ok(new GenericResponse
+                {
+                    Data = lstRol
+                });
+            }
+            catch(Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
     }
 }

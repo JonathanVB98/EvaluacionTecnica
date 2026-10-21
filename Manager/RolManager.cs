@@ -55,5 +55,19 @@ namespace EvaluacionTecnica.Manager
                 IsActive = p.IsActive
             }).ToList();
         }
+
+        public List<RolDto> GetRol()
+        {
+            return _rolRepository
+                .GetRol()
+                .Select(rol => new RolDto
+                {
+                    RolId = rol.RolId,
+                    Name = rol.Name,
+                    IsActive = rol.IsActive,
+                    CreateDate = rol.CreateDate
+                })
+                .ToList();
+        }
     }
 }
