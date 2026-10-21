@@ -206,9 +206,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Filters\BaseFilter.cs" />
+    <Compile Include="Filters\EmpleadoFilter.cs" />
     <Compile Include="Filters\IFilter.cs" />
     <Compile Include="Filters\RolFilter.cs" />
     <Compile Include="Global.asax.cs">
@@ -318,6 +320,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Empleado\" />
     <Folder Include="Views\Rol\" />
   </ItemGroup>
   <ItemGroup>
