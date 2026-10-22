@@ -2,6 +2,7 @@
 using EvaluacionTecnica.Manager.IManager;
 using EvaluacionTecnica.Models;
 using EvaluacionTecnica.Models.Dto;
+using EvaluacionTecnica.Models.Response;
 using EvaluacionTecnica.Models.Tables;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,25 @@ namespace EvaluacionTecnica.Controllers
         [HttpPatch]
         [Route("update")]
         public override IHttpActionResult Update(int id, [FromBody] EmpleadoDto state) => base.Update(id, state);
+
+        [HttpGet]
+        [Route("ObtenerEmpleados")]
+        public IHttpActionResult ObtenerEmpleados()
+        {
+            try
+            {
+                List<EmpleadoResponse> lstEmpleados  = _manager.ObtenerEmpleados();
+
+                return Ok(new GenericResponse
+                {
+                    Data = lstEmpleados
+                });
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
 
     }
 }

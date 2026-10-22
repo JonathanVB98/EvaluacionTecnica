@@ -1,12 +1,12 @@
-﻿using System;
+﻿using EvaluacionTecnica.Manager.IManager;
+using EvaluacionTecnica.Models.Dto;
+using EvaluacionTecnica.Models.Response;
+using EvaluacionTecnica.Models.Tables;
+using EvaluacionTecnica.Repository.IRepository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
-using EvaluacionTecnica.Models.Dto;
-using EvaluacionTecnica.Models.Tables;
-using EvaluacionTecnica.Repository.IRepository;
-using EvaluacionTecnica.Manager.IManager;
 
 namespace EvaluacionTecnica.Manager
 {
@@ -73,6 +73,11 @@ namespace EvaluacionTecnica.Manager
                 Salario = p.Salario,
                 IdSucursal = p.IdSucursal
             }).ToList();
+        }
+
+        public List<EmpleadoResponse> ObtenerEmpleados()
+        {
+            return _empleadoRepository.ObtenerEmpleados();
         }
     }
 }

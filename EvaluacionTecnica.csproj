@@ -208,11 +208,9 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Filters\BaseFilter.cs" />
     <Compile Include="Filters\EmpleadoFilter.cs" />
     <Compile Include="Filters\IFilter.cs" />
-    <Compile Include="Filters\RolFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -221,11 +219,8 @@
     <Compile Include="Manager\EmpleadoManager.cs" />
     <Compile Include="Manager\IManager\IBaseManager.cs" />
     <Compile Include="Manager\IManager\IEmpleadoManager.cs" />
-    <Compile Include="Manager\IManager\IRolManager.cs" />
-    <Compile Include="Manager\RolManager.cs" />
     <Compile Include="Models\Dto\CiudadDto.cs" />
     <Compile Include="Models\Dto\EmpleadoDto.cs" />
-    <Compile Include="Models\Dto\RolDto.cs" />
     <Compile Include="Models\Dto\ErrorMessageDto.cs" />
     <Compile Include="Models\Dto\SexoDto.cs" />
     <Compile Include="Models\Dto\SucursalDto.cs" />
@@ -233,9 +228,9 @@
     <Compile Include="Models\GenericErrorResponse.cs" />
     <Compile Include="Models\GenericResponse.cs" />
     <Compile Include="Models\MappingProfile.cs" />
+    <Compile Include="Models\Response\EmpleadoResponse.cs" />
     <Compile Include="Models\Tables\Ciudad.cs" />
     <Compile Include="Models\Tables\Empleado.cs" />
-    <Compile Include="Models\Tables\Rol.cs" />
     <Compile Include="Models\Tables\Sexo.cs" />
     <Compile Include="Models\Tables\Sucursal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -243,8 +238,6 @@
     <Compile Include="Repository\EmpleadoRepository.cs" />
     <Compile Include="Repository\IRepository\IBaseRepository.cs" />
     <Compile Include="Repository\IRepository\IEmpleadoRepository.cs" />
-    <Compile Include="Repository\IRepository\IRolRepository.cs" />
-    <Compile Include="Repository\RolRepository.cs" />
     <Compile Include="Utils\FieldsFilter.cs" />
     <Compile Include="Utils\GenericObject.cs" />
     <Compile Include="Utils\IQueryableExtensions.cs" />

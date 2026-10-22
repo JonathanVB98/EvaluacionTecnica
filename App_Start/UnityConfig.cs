@@ -21,13 +21,11 @@ namespace EvaluacionTecnica.App_Start
             container.RegisterFactory<IMapper>(c => mapperConfig.CreateMapper());
 
             #region Repository
-            container.RegisterType<IRolRepository, RolRepository>();
             container.RegisterType<IEmpleadoRepository, EmpleadoRepository>();
 
             #endregion
 
             #region Manager
-            container.RegisterType<IRolManager, RolManager>();
             container.RegisterType<IEmpleadoManager, EmpleadoManager>();
             #endregion
 
