@@ -19,7 +19,7 @@ namespace EvaluacionTecnica.Repository
 
         public List<SucursalesResponse> ObtenerSucursales()
         {
-            return context.Sucursal.Select(s => new SucursalesResponse
+            return context.Sucursal.Where(s => s.EsActivo).Select(s => new SucursalesResponse
             {
                 IdSucursal = s.IdSucursal,
                 Nombre = s.Nombre + ", " + s.Ciudad.Nombre
