@@ -11,5 +11,7 @@ namespace EvaluacionTecnica.Repository.IRepository
     public interface IEmpleadoRepository : IBaseRepository<Empleado>
     {
         List<EmpleadoResponse> ObtenerEmpleados(EmpleadoRequest request);
+        List<SucursalesResponse> ObtenerSucursales();
+
     }
 }

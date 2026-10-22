@@ -230,6 +230,7 @@
     <Compile Include="Models\MappingProfile.cs" />
     <Compile Include="Models\Request\EmpleadoRequest.cs" />
     <Compile Include="Models\Response\EmpleadoResponse.cs" />
+    <Compile Include="Models\Response\SucursalesResponse.cs" />
     <Compile Include="Models\Tables\Ciudad.cs" />
     <Compile Include="Models\Tables\Empleado.cs" />
     <Compile Include="Models\Tables\Sexo.cs" />

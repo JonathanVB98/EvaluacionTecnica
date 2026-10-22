@@ -67,5 +67,25 @@ namespace EvaluacionTecnica.Controllers
             }
         }
 
+
+        [HttpGet]
+        [Route("ObtenerSucursales")]
+        public IHttpActionResult ObtenerSucursales()
+        {
+            try
+            {
+                List<SucursalesResponse> lstSucursales = _manager.ObtenerSucursales();
+
+                return Ok(new GenericResponse
+                {
+                    Data = lstSucursales
+                });
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
     }
 }

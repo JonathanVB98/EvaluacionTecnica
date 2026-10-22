@@ -80,5 +80,10 @@ namespace EvaluacionTecnica.Manager
         {
             return _empleadoRepository.ObtenerEmpleados(request);
         }
+
+        public List<SucursalesResponse> ObtenerSucursales()
+        {
+            return _empleadoRepository.ObtenerSucursales();
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace EvaluacionTecnica.Manager.IManager
     {
 
         List<EmpleadoResponse> ObtenerEmpleados(EmpleadoRequest request);
+        List<SucursalesResponse> ObtenerSucursales();
     }
 }

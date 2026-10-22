@@ -17,6 +17,14 @@ namespace EvaluacionTecnica.Repository
             this.context = context;
         }
 
+        public List<SucursalesResponse> ObtenerSucursales()
+        {
+            return context.Sucursal.Select(s => new SucursalesResponse
+            {
+                IdSucursal = s.IdSucursal,
+                Nombre = s.Nombre + ", " + s.Ciudad.Nombre
+            }).ToList();
+        }
 
         public List<EmpleadoResponse> ObtenerEmpleados(EmpleadoRequest request)
         {
