@@ -1,5 +1,6 @@
 ﻿using EvaluacionTecnica.Manager.IManager;
 using EvaluacionTecnica.Models.Dto;
+using EvaluacionTecnica.Models.Request;
 using EvaluacionTecnica.Models.Response;
 using EvaluacionTecnica.Models.Tables;
 using EvaluacionTecnica.Repository.IRepository;
@@ -75,9 +76,9 @@ namespace EvaluacionTecnica.Manager
             }).ToList();
         }
 
-        public List<EmpleadoResponse> ObtenerEmpleados()
+        public List<EmpleadoResponse> ObtenerEmpleados(EmpleadoRequest request)
         {
-            return _empleadoRepository.ObtenerEmpleados();
+            return _empleadoRepository.ObtenerEmpleados(request);
         }
     }
 }

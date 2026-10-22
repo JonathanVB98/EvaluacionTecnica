@@ -228,6 +228,7 @@
     <Compile Include="Models\GenericErrorResponse.cs" />
     <Compile Include="Models\GenericResponse.cs" />
     <Compile Include="Models\MappingProfile.cs" />
+    <Compile Include="Models\Request\EmpleadoRequest.cs" />
     <Compile Include="Models\Response\EmpleadoResponse.cs" />
     <Compile Include="Models\Tables\Ciudad.cs" />
     <Compile Include="Models\Tables\Empleado.cs" />

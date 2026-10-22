@@ -1,4 +1,5 @@
-﻿using EvaluacionTecnica.Models.Response;
+﻿using EvaluacionTecnica.Models.Request;
+using EvaluacionTecnica.Models.Response;
 using EvaluacionTecnica.Models.Tables;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,6 @@ namespace EvaluacionTecnica.Repository.IRepository
 {
     public interface IEmpleadoRepository : IBaseRepository<Empleado>
     {
-        List<EmpleadoResponse> ObtenerEmpleados();
+        List<EmpleadoResponse> ObtenerEmpleados(EmpleadoRequest request);
     }
 }

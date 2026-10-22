@@ -1,7 +1,9 @@
 ﻿using EvaluacionTecnica.Models;
+using EvaluacionTecnica.Models.Request;
 using EvaluacionTecnica.Models.Response;
 using EvaluacionTecnica.Models.Tables;  
 using EvaluacionTecnica.Repository.IRepository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,9 +18,26 @@ namespace EvaluacionTecnica.Repository
         }
 
 
-        public List<EmpleadoResponse> ObtenerEmpleados()
+        public List<EmpleadoResponse> ObtenerEmpleados(EmpleadoRequest request)
         {
-            return context.Empleado.Select(e => new EmpleadoResponse
+            var query = context.Empleado.AsQueryable();
+
+            if (request != null)
+            {
+                DateTime? fechaFin = request.FechaFin?.Date.AddDays(1);
+
+                query = query.Where(e =>
+                    (request.IdEmpleado <= 0 || e.IdEmpleado == request.IdEmpleado) &&
+                    (string.IsNullOrEmpty(request.Nombre) ||
+                        (e.Nombre + " " + e.Apellidos).Contains(request.Nombre)) &&
+                    (!request.FechaInicio.HasValue ||
+                        e.FechaIngreso >= request.FechaInicio.Value) &&
+                    (!fechaFin.HasValue || e.FechaIngreso < fechaFin.Value) &&
+                    (request.IdSucursal <= 0 || e.IdSucursal == request.IdSucursal)
+                );
+            }
+
+            return query.Select(e => new EmpleadoResponse
             {
                 IdEmpleado = e.IdEmpleado,
                 Nombre = e.Nombre + " " + e.Apellidos,
